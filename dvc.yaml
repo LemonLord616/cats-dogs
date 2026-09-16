@@ -1,6 +1,6 @@
 stages:
   download:
-    cmd: kaggle datasets download -d bhavikjikadara/dog-and-cat-classification-dataset -p data/raw/ --unzip
+    cmd: uv run kaggle datasets download -d bhavikjikadara/dog-and-cat-classification-dataset -p data/raw/ --unzip
     outs:
       - data/raw/
 

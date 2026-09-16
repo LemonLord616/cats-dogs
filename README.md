@@ -5,6 +5,7 @@
 ## Install all dependencies (not required).
 ```
 uv sync --all-extras
+source .venv/bin/activate
 ```
 
 ## Run app
@@ -20,6 +21,7 @@ You can test this classification app without training the model. This repository
 Optionally add train optional dependencies
 ```
 uv sync --extra train
+source .venv/bin/activate
 ```
 
 Make sure you have `~/.kaggle/kaggle.json`, because dataset is located at Kaggle, and Kaggle requires auth. Then you can execute this to download and prepare your data:
