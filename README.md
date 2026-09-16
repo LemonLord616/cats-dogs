@@ -33,7 +33,7 @@ Then you can try:
 ```
 uv run scripts/flow.py
 ```
-This will run simple hyperparameter sweep using MLFlow. To run MLFlow UI use:
+This will run simple hyperparameter sweep using MLFlow. To run MLFlow UI use (in different terminal):
 ```
 uv run mlflow ui --backend-store-uri sqlite:///mlflow.db
 ```
