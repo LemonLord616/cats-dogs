@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat or Dog</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <main class="card">
+        <h1>Cat or Dog?</h1>
+        <label class="dropzone" for="file">
+            <input type="file" id="file" accept="image/*" hidden>
+            <span id="drop-text">Choose an image</span>
+        </label>
+        <img id="preview" alt="Preview" hidden>
+        <button id="submit" disabled>Classify</button>
+        <button id="reload" class="secondary" type="button">Reload model</button>
+        <p id="result"></p>
+        <p id="reload-status" class="status" hidden></p>
+        <p id="error" class="error"></p>
+    </main>
+    <script src="/static/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+[build-system]
+requires = ["uv_build>=0.12.15,<0.13.0"]
+build-backend = "uv_build"
+
+[project]
+name = "cats_dogs"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Marat Mestnikov", email = "ma.mestnikov@gmail.com" }
+]
+requires-python = ">=3.11"
+dependencies = [
+    "pydantic>=2.13.5",
+    "pydantic-settings>=2.15.0",
+]
+
+[project.optional-dependencies]
+train = [
+    "kaggle>=2.2.4",
+    "mlflow>=3.16.0",
+    "numpy>=2.4.6",
+    "pandas>=3.0.5",
+    "pillow>=12.3.0",
+    "scikit-learn>=1.9.1",
+    "torch>=2.14.0",
+]
+api = [
+    "fastapi[standard]>=0.141.1",
+    "numpy>=2.4.6",
+    "pandas>=3.0.5",
+    "pillow>=12.3.0",
+]
+app = [
+    "fastapi[standard]>=0.141.1",
+    "httpx>=0.28.1",
+]

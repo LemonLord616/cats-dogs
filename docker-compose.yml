@@ -1,0 +1,25 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: services/api/Dockerfile
+    volumes:
+      - ./data/models:/srv/models:ro
+    environment:
+      - MODEL_NAME=${MODEL_NAME}
+      - MODEL_SIZE=${MODEL_SIZE}
+    restart: unless-stopped
+
+  app:
+    build:
+      context: .
+      dockerfile: services/app/Dockerfile
+    volumes:
+      - ./services/app/static:/srv/services/app/static:ro
+    ports:
+      - "${APP_PORT}:8000"
+    environment:
+      - API_URL=${API_URL}
+    depends_on:
+      - api
+    restart: unless-stopped

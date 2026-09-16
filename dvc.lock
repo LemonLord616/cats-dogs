@@ -1,0 +1,32 @@
+schema: '2.0'
+stages:
+  download:
+    cmd: kaggle datasets download -d 
+      bhavikjikadara/dog-and-cat-classification-dataset -p data/raw/ --unzip
+    outs:
+    - path: data/raw/
+      hash: md5
+      md5: 8467ce11580412ec0b77ca194007550a.dir
+      size: 848866410
+      nfiles: 24998
+  preprocess:
+    cmd: uv run scripts/preprocess.py
+    deps:
+    - path: data/raw/
+      hash: md5
+      md5: 8467ce11580412ec0b77ca194007550a.dir
+      size: 848866410
+      nfiles: 24998
+    - path: scripts/preprocess.py
+      hash: md5
+      md5: 94c3fa712209f8cfdcc89ad5339cf244
+      size: 1253
+    outs:
+    - path: data/processed/test.csv
+      hash: md5
+      md5: 35768d064a0f8f431e3dca445c0d6a4d
+      size: 175567
+    - path: data/processed/train.csv
+      hash: md5
+      md5: 0a2ae6debf5daf24237b51bbeac18d20
+      size: 702167
